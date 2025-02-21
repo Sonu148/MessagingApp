@@ -30,4 +30,10 @@ public class MessageAppController {
         String lastName = user.getLastName();
         return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
+
+    // Method to handle put request firstName as path variable and lastName as query parameter
+    @PutMapping("/hello/put/{firstName}/query")
+    public String sayHello(@PathVariable String firstName, @RequestParam(value="lastName") String lastName){
+        return "Hello "+firstName +" "+ lastName+" from BridgeLabz!!";
+    }
 }
